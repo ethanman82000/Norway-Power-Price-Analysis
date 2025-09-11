@@ -21,7 +21,6 @@ This project implements a **hybrid modelling approach**:
    - Models the temporal structure of residuals to capture autocorrelation and seasonality.
    - Shaves down forecasting errors left over from the ML stage.  
 
----
 
 ## ⚡ Data Sources
 
@@ -39,7 +38,6 @@ FROST_CLIENT_ID=your-client-id.
 ```
 Note that quotes "" should not be placed around your-client-id.
 
----
 
 ## 🔬 Methods
 
@@ -55,7 +53,6 @@ Note that quotes "" should not be placed around your-client-id.
 - **Performance**  
   - Achieved **MAE ≈ 9.5 EUR/MWh** on day-ahead NO2 price forecasts.  
 
----
 
 ## ⚙️ Example Workflow
 
@@ -65,7 +62,6 @@ Note that quotes "" should not be placed around your-client-id.
 4. Apply SARIMA to residuals for temporal correction.  
 5. Evaluate performance (MAE, RMSE, visual forecast comparisons).  
 
----
 
 ## 🚀 Future Improvements
 
@@ -75,7 +71,6 @@ Note that quotes "" should not be placed around your-client-id.
 - Implement **dynamic weighting** between ML and SARIMA outputs. 
 - Automate daily retraining with live data feeds.  
 
----
 
 ## 🛠️ Tech Stack
 
@@ -84,7 +79,6 @@ Note that quotes "" should not be placed around your-client-id.
 - **matplotlib, seaborn** — visualisation  
 - **yfinance, requests, Frost API** — data collection
 
----
 
 ## 📂 Repository Structure
 
