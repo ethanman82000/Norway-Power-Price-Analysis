@@ -1,6 +1,8 @@
 # NO2 Day-Ahead Electricity Price Forecasting
 
-This project forecasts **day-ahead electricity prices** in the NO2 bidding zone of Nord Pool using a hybrid approach that combines **machine learning** with **time series modelling**. The goal is to improve predictive accuracy for energy trading and portfolio optimisation by statistical analysis of exogenous drivers (weather, fuel markets, power prices in interconnected regions), and the autocorrelated structure of electricity prices.
+This project forecasts **day-ahead electricity prices** in the NO2 bidding zone of Nord Pool using a hybrid approach that combines **machine learning** with **time series modelling**. 
+
+The goal is to improve predictive accuracy for energy trading and portfolio optimisation through statistical analysis of exogenous drivers (weather, fuel markets, power prices in interconnected regions), and the autocorrelated structure of electricity prices.
 
 The model achieved a **mean absolute error (MAE) of ~9.5 EUR/MWh**.
 
@@ -25,10 +27,10 @@ This project implements a **hybrid modelling approach**:
 
 The model integrates data from **public sources**:
 
-- **Nord Pool** — day-ahead prices and market data for Scandinavian and other European regions
-- **Yahoo Finance (yfinance)** — commodity prices e.g. TTF gas 
-- **Frost API (Norwegian Meteorological Institute)** — weather forecasts (wind, temperature, precipitation).  
-- **Ember** — price data for countries not traded on Nord Pool e.g. for the UK, which is traded on EPEX SPOT.  
+- **Nord Pool** - day-ahead prices and market data for Scandinavian and other European regions
+- **Yahoo Finance (yfinance)** - commodity prices e.g. TTF gas 
+- **Frost API (Norwegian Meteorological Institute)** - weather forecasts (wind, temperature, precipitation).  
+- **Ember** - price data for countries not traded on Nord Pool e.g. for the UK, which is traded on EPEX SPOT.  
 - **ENTSOe** - water levels of Norwegian reservoirs.
 
 N.B. Frost API requires a client ID to gain access. This key should be saved in a .env file in the project root directory in the format: 
