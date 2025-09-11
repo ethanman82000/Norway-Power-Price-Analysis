@@ -84,21 +84,21 @@ Note that quotes "" should not be placed around your-client-id.
 
 ```text
 Project Root
-├── data/ 												# Datasets not directly imported from online sources 
+├── data/ 					# Datasets not directly imported from online sources 
 │ ├── EU_daily_price_data_Ember.csv		# For UK price data (not on Nord Pool)
 │ └── Water_Reservoir_Filling_Data_entsoe.csv	# Norwegian reservoir data from ENTSOe
 │
-├── data_import_functions/ 							# All data extraction modules - includes cleaning, aggregation and formatting
+├── data_import_functions/ 			# All data extraction modules - includes cleaning, aggregation and formatting
 │
-├── notebooks/ 											# Walkthroughs of analysis and regression methodology - markdown cells throughout for detailed explanation
+├── notebooks/ 					# Walkthroughs of analysis and regression methodology - markdown cells throughout for detailed explanation
 │ ├── data_gathering.ipynb			# Reasoning behind selecting each exogenous variable and explanation of preprocessing
 │ ├── statistical_analysis.ipynb		# Disentangling regressors and dealing with multicollinearity
 │ └── ML_SARIMA_regression.ipynb		# Training hybrid ML/SARIMA model to forecast day-ahead prices
 │
 ├── config.py					# Configure project pathways
 │
-├── requirements.txt 									# Minimal dependencies
-└── README.md 											# This file
+├── requirements.txt 				# Minimal dependencies
+└── README.md 					# This file
 
 ```
 
