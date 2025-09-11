@@ -90,7 +90,7 @@ Project Root
 │
 ├── data_import_functions/ 			# All data extraction modules - includes cleaning, aggregation and formatting
 │
-├── notebooks/ 					# Walkthroughs of analysis and regression methodology - markdown cells throughout for detailed explanation
+├── notebooks/ 				# Walkthroughs of analysis and regression methodology
 │ ├── data_gathering.ipynb			# Reasoning behind selecting each exogenous variable and explanation of preprocessing
 │ ├── statistical_analysis.ipynb		# Disentangling regressors and dealing with multicollinearity
 │ └── ML_SARIMA_regression.ipynb		# Training hybrid ML/SARIMA model to forecast day-ahead prices
