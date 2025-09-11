@@ -1,0 +1,11 @@
+matplotlib
+nordpool
+numpy
+pandas
+python-dotenv
+requests
+scikit_learn
+scipy
+statsmodels
+xgboost
+yfinance

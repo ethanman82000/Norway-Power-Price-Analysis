@@ -5,12 +5,13 @@ import numpy as np
 #import requests to query the Frost API
 import requests
 
-#import dotenv to load client ID secret key
-#from dotenv import load_dotenv
-#import os
+#import dotenv to load client_ID secret key
+from dotenv import load_dotenv
+import os
 
-#load_dotenv()
-client_id = "d6b50c09-7406-47d2-b327-cc4bee26af01"
+from config import PROJECT_ROOT
+load_dotenv(PROJECT_ROOT / ".env")
+client_id = os.getenv("FROST_CLIENT_ID")
 
 #Querying Frost API for the relevant sources: I am finding all weather stations in the county of Agder and treating the averaged measurements as representative/indicative of the weather condition in Southern Norway.
 #All stations in Agder (found in prev cell) are queried for their max air temp, total precip, and mean wind speed - all aggregations of measurements are taken over the period of a day.
@@ -51,22 +52,13 @@ def Frost_weather_data(year):
         print('Error! Returned status code %s' % r.status_code)
         print('Message: %s' % json['error']['message'])
         print('Reason: %s' % json['error']['reason'])
-    
-    # This will return a Dataframe with all of the observations in a table format
-    df = pd.DataFrame()
-    for i in range(len(data)):
-        entry = data[i]
-        row = pd.DataFrame(entry['observations'])
-        row['referenceTime'] = entry['referenceTime']
-        row['sourceId'] = entry['sourceId']
-        print(row)
-        df = pd.concat([df, row])
-    
-    df = df.reset_index()
-    df.referenceTime = pd.to_datetime(df.referenceTime).dt.date
-    
-    piv_tab = pd.pivot_table(df, index=['referenceTime', 'sourceId'], columns=['elementId'], values = ['value'], fill_value = None)
-    weather_table = piv_tab.groupby('referenceTime')['value'].mean().droplevel(0, axis=1)
-    weather_table.index = pd.DatetimeIndex(weather_table.index)
+
+    #flatten json data and gather weather and time data
+    #pivot this out and average over time slices to give representative weather data at a certain time
+    df = pd.json_normalize(data, record_path = 'observations', meta = ['referenceTime'], max_level = 0)
+    weather_table = df.groupby(['referenceTime', 'elementId'])['value'].mean().unstack('elementId')
+    weather_table.index = pd.DatetimeIndex(weather_table.index).tz_localize(None)
 
     return weather_table
+    
+    

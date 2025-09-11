@@ -1,0 +1,66 @@
+# -------------------------
+# Python cache / bytecode
+# -------------------------
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.py[cod]
+*$py.class
+
+# -------------------------
+# Virtual / Conda environments
+# -------------------------
+env/
+venv/
+*.conda
+*.egg-info/
+*.egg
+.env
+.venv/
+
+# -------------------------
+# Jupyter Notebook
+# -------------------------
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# -------------------------
+# Dash / Web App
+# -------------------------
+*.db        # if using local SQLite for caching
+*.sqlite
+
+# -------------------------
+# Other Data
+# -------------------------
+*.xlsx
+*.json
+*.parquet
+
+# -------------------------
+# Logs
+# -------------------------
+*.log
+
+# -------------------------
+# OS-specific
+# -------------------------
+.DS_Store
+Thumbs.db
+
+# -------------------------
+# IDE / Editor
+# -------------------------
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# -------------------------
+# Drafts / Secrets / API keys
+# -------------------------
+drafts/
+secrets/
+*.env
+.env.local
