@@ -6,6 +6,8 @@ The goal is to improve predictive accuracy for energy trading and portfolio opti
 
 The model achieved a **mean absolute error (MAE) of ~9.5 EUR/MWh**.
 
+<img src="images/final_predictions_plot.png" width="800"/>
+
 ---
 
 ## 📊 Project Overview
